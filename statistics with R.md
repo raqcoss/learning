@@ -73,7 +73,8 @@ mean(abs(dists)
 ```
 ### Quartiles
 ```
-quantile(dataset$column_name,probs=c(0.00,0.25,0.50,0.75,1.00)) 
+quantile(dataset$column_name,probs=c(0.00,0.25,0.50,0.75,1.00))
+quantile(dataset$column_name,probs = seq(0,1,1/5)) #seq(start, end, step)
 ggplot(dataset, aes(y=column_name))+
   geom_boxplot()
 ```
