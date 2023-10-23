@@ -89,6 +89,7 @@ lower_threshold <- quantile(dataset$column_name,0.25) - 1.5 * iqr
 upper_threshold <- quantile(dataset$column_name,0.75) + 1.5 * iqr
 dataset %>% filter(column_name<lower_threshold | column_name>upper_threshold) %>%
   select(ID, name, column_name1, column_name2)
+```
 
 
 
