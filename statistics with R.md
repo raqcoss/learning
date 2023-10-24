@@ -91,7 +91,39 @@ upper_threshold <- quantile(dataset$column_name,0.75) + 1.5 * iqr
 dataset %>% filter(column_name<lower_threshold | column_name>upper_threshold) %>%
   select(ID, name, column_name1, column_name2)
 ```
+### Excercises
+```
+# Calculate variance and sd of co2_emission for each food_category
+food_consumption %>% 
+  group_by(food_category) %>% 
+  summarize(var_co2 = var(co2_emission),
+           sd_co2 = sd(co2_emission))
 
+ggplot(food_consumption, aes(x=co2_emission)) +
+  # Create a histogram
+  geom_histogram() +
+  # Create a separate sub-graph for each food_category
+  facet_wrap(~food_category)
+```
+```
+# Calculate total co2_emission per country: emissions_by_country
+emissions_by_country <- food_consumption %>%
+  group_by(country) %>%
+  summarize(total_emission = sum(co2_emission))
+
+# Compute the first and third quartiles and IQR of total_emission
+q1 <- quantile(emissions_by_country$total_emission, 0.25)
+q3 <- quantile(emissions_by_country$total_emission, 0.75)
+iqr <- q3 - q1
+
+# Calculate the lower and upper cutoffs for outliers
+lower <- q1 - 1.5 * iqr
+upper <- q3 + 1.5 * iqr
+
+# Filter emissions_by_country to find outliers
+emissions_by_country %>%
+  filter(total_emission<lower | total_emission>upper)
+```
 
 
 
