@@ -1,10 +1,19 @@
 # Biology Meets Programming: Bioinformatics for Beginners
 University of California San Diego
+
 Coursera
+
+
 **Taught by:** Pavel Pevzner, Professor
+
 Department of Computer Science and Engineering 
+
+
 **Taught by:** Phillip Compeau, Visiting Researcher
+
 Department of Computer Science & Engineering
+
+
 ## Most frequent k-mer
 ```
 # Input:  A string Text and an integer k
