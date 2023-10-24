@@ -1,7 +1,9 @@
 # Biology Meets Programming: Bioinformatics for Beginners
+
 *University of California San Diego*
-<br>
+
 Coursera
+
 <br>
 
 **Taught by:** Pavel Pevzner, Professor.
