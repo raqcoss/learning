@@ -1,18 +1,7 @@
 # Statistics with R
 
-###  '%whatever%' Notation
+###  '%>%' Notation
 The dplyr package introduced the %.% operator to pass the left hand side as an argument of the function on the right hand side, similar to a *NIX pipe.
-
-```
-"%,%" <- function(x, y) paste0(x, ", ", y)
-
-# test run
-
-"Hello" %,% "World"
-## [1] "Hello, World"
-```
-
-
 %>% is similar to pipe in Unix. For example, in
 
 ```
@@ -36,7 +25,6 @@ head(food_consumption)
 4 Argentina lamb_goat            1.56        54.6 
 5 Argentina fish                 4.36         6.96
 6 Argentina eggs                11.4         10.5
-
 
 food_consumption %>%
   # Filter for Belgium and USA
