@@ -145,3 +145,66 @@ def FasterSymbolArray(Genome, symbol):
             array[i] = array[i]+1
     return array
 ```
+## SkewArray
+Skew arrays show the increments on G-C content and the inflection points where ori and terminus are located.
+
+```
+def SkewArray(Genome):
+    skew = []
+    skew.append(0)
+    for i in range(0,len(Genome)):
+        if Genome[i] == "G":
+            skew.append(skew[-1] + 1)
+        elif Genome[i] == "C":
+            skew.append(skew[-1] - 1)
+        else:
+            skew.append(skew[-1])
+
+    return skew
+
+def MinimumSkew(Genome):
+    positions = [] # output variable
+    skew = SkewArray(Genome)
+    for i in range (0,len(Genome)):
+        if skew[i] == min(skew):
+            positions.append(i)  
+    return positions
+```
+
+## Hamming Distance
+The total number of mismatches between strings p and q is called the **Hamming** distance between these strings
+
+```
+def HammingDistance(p, q):
+    hamming = 0
+    if len(p) == len(q):
+        for i in range(0,len(p)):
+            if p[i] != q[i]:
+                hamming += 1
+    else: raise "input stings are not the same lenght"
+        
+    return hamming
+
+def ApproximatePatternMatching(Text, Pattern, d):
+    positions = [] # initializing list of positions
+    k = len(Pattern)
+    Text = Text + "N"*d
+    n = len(Text)
+    for i in range(n-k+1):
+        mismatches = HammingDistance(Text[i:i+k], Pattern)
+        if mismatches <= d:
+            positions.append(i)
+    return positions
+
+def ApproximatePatternCount(Pattern, Text, d):
+    count = 0 # initialize count variable
+    k = len(Pattern)
+    Text = Text + "N"*d
+    n = len(Text)
+    for i in range(n-k+1):
+        mismatches = HammingDistance(Text[i:i+k], Pattern)
+        if mismatches <= d:
+            count += 1
+    return count
+
+```
