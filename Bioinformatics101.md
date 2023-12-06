@@ -544,4 +544,21 @@ def ProfileGeneratedString(Text, profile, k):
             generated_string = list(kmer_probability.keys())[u]
     return generated_string
 
+def GibbsSampler(Dna, k, t, N):
+    n = len(Dna[0])
+    motifs = []
+    for i in range(t):
+        rand = random.randint(0,n-k)
+        motifs.append(Dna[i][rand:rand+k])
+    BestMotifs = motifs
+    for j in range(N):
+        randi = random.randint(0,len(motifs)-1)
+        rand = random.randint(0,n-k)
+        hidden_motif = motifs[randi]
+        motifs[randi] = Dna[randi][rand:rand+k]
+        if Score(motifs) < Score(BestMotifs):
+            BestMotifs = motifs
+    return BestMotifs
+
+
 ```
