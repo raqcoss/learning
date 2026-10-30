@@ -3,13 +3,13 @@
 In this repository you will find introductory topics for computational biology and related resources.
 
 ## Overview
-1. [Python](Easy-Python.md)
-2. [R]("statistics-with-R.md)
+1. [Python](./easy-python.md)
+2. [R](statistics-with-R.md)
 3. [Markdown notation](notes-on-MARKDOWN.md)
 4. [SQL](interactive-courses-for-SQL)
 
 ### Interactive courses for SQL
 
-[SQLBolt](https://sqlbolt.com/) offers a practical, interactive framework for etting to know SQL syntax.
+[SQLBolt](https://sqlbolt.com/) offers a practical, interactive framework for getting to know SQL syntax.
 
 
