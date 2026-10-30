@@ -6,7 +6,7 @@ In this repository you will find introductory topics for computational biology a
 1. [Python](./Easy-Python.md)
 2. [R](statistics-with-R.md)
 3. [Markdown notation](notes-on-MARKDOWN.md)
-4. [SQL](interactive-courses-for-SQL)
+4. [SQL](Interactive-courses-for-SQL)
 5. [Git](Git-Usage)
 
 ### Interactive courses for SQL
